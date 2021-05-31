@@ -5,9 +5,17 @@ import "fmt"
 // define a struct, there is no class to define
 type User struct {
 	// variable in struct must be capital
-	Name    string
+
+	Name string
+
+	// memory pointer to string value, can be int value or boolean value
+	Nickname *string
+
 	Age     int
 	Enabled bool
+
+	// String array variable
+	Interest []string
 }
 
 // define global variable
@@ -29,11 +37,19 @@ func main() {
 	user1.Name = "Ben"
 	user1.Age = 20
 	user1.Enabled = true
+	user1.Interest = []string{"Jogging", "Gaming"}
+
+	// memory pointer can be null
+	user1.Nickname = nil
 
 	// second way of initializing struct within method scope
 	user2 := User{}
 	user2.Name = "James"
 	user2.Age = 30
 	user2.Enabled = true
+	user2.Interest = []string{}
 
+	// point to memory that hold the value J, something like map where a key hold the value to the element
+	var nickname = "J"
+	user1.Nickname = &nickname
 }
