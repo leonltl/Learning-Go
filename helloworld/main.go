@@ -51,5 +51,5 @@ func main() {
 
 	// point to memory that hold the value J, something like map where a key hold the value to the element
 	var nickname = "J"
-	user1.Nickname = &nickname
+	user2.Nickname = &nickname
 }
